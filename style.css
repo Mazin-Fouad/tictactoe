@@ -1,8 +1,15 @@
+body {
+  font-family: "Kanit", sans-serif;
+  background-color: #cc979f;
+}
+
 section {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 table {
   border-collapse: collapse;
@@ -51,4 +58,128 @@ tr td:last-child {
 
 .d-none {
   display: none;
+}
+
+.player-panel {
+  margin-bottom: 40px;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.player-panel div {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.player-panel img {
+  width: 60px;
+  height: 60px;
+  margin-right: 16px;
+}
+
+.player-inactive {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.horizontal-line {
+  height: 10px;
+  width: 350px;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  position: absolute;
+  transform: scaleX(0);
+  transition: transform 225ms ease-in-out;
+  border-radius: 5px;
+  z-index: 1;
+  
+}
+
+.make-vertical {
+  transform: rotate(90deg) scaleX(0);
+}
+
+.end-screen{
+  width: 500px;
+  height: 400px;
+  background-color: #F6D98F;
+  text-align: center;
+  color: #3C4A79;
+  animation: zoomIn 300ms ease-in-out;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#end-screen h2 {
+  margin-top: 150px;
+}
+
+.the-winner-span {
+  color: #833E5B;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+.button-5 {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #fa6400;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin-top: 85px;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 200px;
+  border-radius: 15px;
+}
+
+.button-5:hover,
+.button-5:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button-5:hover {
+  transform: translateY(-3px);
+}
+
+.button-5:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
 }
