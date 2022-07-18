@@ -1,6 +1,8 @@
 let fields = [];
 let currentShape = 'Cross';
 let gameOver = false;
+let click = new Audio('/sounds/click-effect.mp3');
+let success = new Audio('/sounds/success.mp3');
 
 function fillShape(id) {
   if (!fields[id] && !gameOver) {
@@ -13,9 +15,8 @@ function fillShape(id) {
       document.getElementById('player-2').classList.remove('player-inactive');
       document.getElementById('player-1').classList.add('player-inactive');
     }
-
     fields[id] = currentShape;
-    console.log(fields);
+    //console.log(fields);
     draw();
     checkForWinn();
   }
@@ -24,13 +25,13 @@ function fillShape(id) {
 function draw() {
   for (let i = 0; i < fields.length; i++) {
     if (fields[i] == 'Circle') {
-      //document.getElementById('circle-0').classList.remove('d-none');
       document.getElementById('circle-' + i).classList.remove('d-none');
     }
     if (fields[i] == 'Cross') {
       document.getElementById('cross-' + i).classList.remove('d-none');
     }
   }
+  click.play();
 }
 
 function checkForWinn() {
@@ -91,6 +92,7 @@ function showEndScreen(winner) {
   document.getElementById('end-screen').classList.remove('d-none');
   document.getElementById('table').style.display = 'none';
   hideLines();
+  success.play();
 }
 
 function generateEndScreenContent(winner) {
@@ -113,9 +115,8 @@ function restart() {
   fields = [];
   document.getElementById('end-screen').classList.add('d-none');
   document.getElementById('table').style.display = 'flex';
-  for (let i = 0; i < 8; i++) {
-  document.getElementById('cross-' + i).classList.add('d-none');
-  document.getElementById('circle-' + i).classList.add('d-none');
+  for (let i = 0; i < 9; i++) {
+    document.getElementById('cross-' + i).classList.add('d-none');
+    document.getElementById('circle-' + i).classList.add('d-none');
   }
 }
-
