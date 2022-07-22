@@ -1,8 +1,20 @@
 let fields = [];
 let currentShape = 'Cross';
 let gameOver = false;
-let click = new Audio('/sounds/click-effect.mp3');
-let success = new Audio('/sounds/success.mp3');
+let click = new Audio('./sounds/click-effect.mp3');
+let success = new Audio('./sounds/success.mp3');
+
+function init() {
+  document.getElementById('start-screen').classList.remove('d-none');
+  document.getElementById('table').style.display = 'none';
+  document.getElementById('player-panel').style.display = 'none';
+}
+
+function start() {
+  document.getElementById('start-screen').style.display = 'none';
+  document.getElementById('table').style.display = '';
+  document.getElementById('player-panel').style.display = '';
+}
 
 function fillShape(id) {
   if (!fields[id] && !gameOver) {
@@ -90,6 +102,7 @@ function youHaveWon(winner) {
 function showEndScreen(winner) {
   document.getElementById('the-winner').innerHTML = generateEndScreenContent(winner);
   document.getElementById('end-screen').classList.remove('d-none');
+  document.getElementById('player-panel').style.display = 'none';
   document.getElementById('table').style.display = 'none';
   hideLines();
   success.play();
@@ -119,4 +132,33 @@ function restart() {
     document.getElementById('cross-' + i).classList.add('d-none');
     document.getElementById('circle-' + i).classList.add('d-none');
   }
+  showLines();
+  resetScaleAndRotate();
+  showPlayerPanel();
+}
+
+function showPlayerPanel() {
+  document.getElementById('player-panel').style.display = '';
+}
+
+function showLines() {
+  document.getElementById('line-1').classList.remove('d-none');
+  document.getElementById('line-2').classList.remove('d-none');
+  document.getElementById('line-3').classList.remove('d-none');
+  document.getElementById('line-4').classList.remove('d-none');
+  document.getElementById('line-5').classList.remove('d-none');
+  document.getElementById('line-6').classList.remove('d-none');
+  document.getElementById('line-7').classList.remove('d-none');
+  document.getElementById('line-8').classList.remove('d-none');
+}
+
+function resetScaleAndRotate() {
+  document.getElementById('line-1').style.transform = 'scaleX(0)';
+  document.getElementById('line-2').style.transform = 'scaleX(0)';
+  document.getElementById('line-3').style.transform = 'scaleX(0)';
+  document.getElementById('line-4').style.transform = 'rotate(0) scale(0)';
+  document.getElementById('line-5').style.transform = 'rotate(0) scale(0)';
+  document.getElementById('line-6').style.transform = 'rotate(0) scale(0)';
+  document.getElementById('line-7').style.transform = 'rotate(0) scale(0)';
+  document.getElementById('line-8').style.transform = 'rotate(0) scale(0)';
 }

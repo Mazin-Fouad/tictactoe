@@ -1,6 +1,7 @@
 body {
-  font-family: "Kanit", sans-serif;
+  font-family: 'Kanit', sans-serif;
   background-color: #cc979f;
+  overflow-x: hidden;
 }
 
 section {
@@ -9,10 +10,11 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
 }
+
 table {
   border-collapse: collapse;
+  position: relative;
 }
 
 tr {
@@ -89,30 +91,24 @@ tr td:last-child {
   height: 10px;
   width: 350px;
   background: rgb(131, 58, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(131, 58, 180, 1) 0%,
-    rgba(253, 29, 29, 1) 50%,
-    rgba(252, 176, 69, 1) 100%
-  );
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
   position: absolute;
   transform: scaleX(0);
   transition: transform 225ms ease-in-out;
   border-radius: 5px;
   z-index: 1;
-  
 }
 
 .make-vertical {
   transform: rotate(90deg) scaleX(0);
 }
 
-.end-screen{
+.end-screen {
   width: 500px;
   height: 400px;
-  background-color: #F6D98F;
+  background-color: #f6d98f;
   text-align: center;
-  color: #3C4A79;
+  color: #3c4a79;
   animation: zoomIn 300ms ease-in-out;
 }
 
@@ -128,12 +124,31 @@ tr td:last-child {
   }
 }
 
+.start-screen {
+  width: 530px;
+  height: 460px;
+  background-color: #f6d98f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-screen-img {
+  height: 170px;
+}
+
+.start-screen h1 {
+  color: #833e5b;
+  font-size: 40px;
+}
+
 #end-screen h2 {
   margin-top: 90px;
 }
 
 .the-winner-span {
-  color: #833E5B;
+  color: #833e5b;
   font-weight: bold;
   font-style: oblique;
 }
@@ -143,20 +158,20 @@ tr td:last-child {
   background-clip: padding-box;
   background-color: #fa6400;
   border: 1px solid transparent;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 600;
   justify-content: center;
   line-height: 1.25;
   margin-top: 85px;
   min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
   position: relative;
   text-decoration: none;
   transition: all 250ms;
@@ -180,6 +195,125 @@ tr td:last-child {
 
 .button-5:active {
   background-color: #c85000;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   transform: translateY(0);
+}
+
+/* @media (min-width: 270px) and (max-width: 379px) {
+  #start-screen,
+  #start-screen {
+    width: 100%;
+  }
+
+  #table {
+    width: 250px;
+    position: relative;
+  }
+
+  #player-panel {
+    flex-direction: column;
+  }
+
+  #table td {
+    height: 100px;
+  }
+
+  .line {
+    width: 220px !important;
+  }
+
+  #line-1 {
+    position: relative !important;
+    top: calc(115px / 2) !important;
+  }
+
+  #line-2 {
+    position: relative !important;
+    top: calc(325px / 2) !important;
+  }
+
+  #line-3 {
+    position: relative !important;
+    top: calc(540px / 2) !important;
+  }
+
+  #line-4 {
+    position: relative !important;
+    top: calc(310px / 2) !important;
+    left: calc(-170px / 2) !important;
+  }
+
+  #line-5 {
+    position: relative !important; 
+    top: calc(310px /2) !important;
+  }
+
+  #line-6 {
+    position: relative !important;
+    top: calc(310px / 2) !important;
+    right: calc(-170px / 2) !important;
+  }
+} */
+
+@media (min-width: 380px){
+  #start-screen {
+    width: 375px;
+  }
+
+  #end-screen {
+    width: 375px;
+  }
+
+  #player-panel {
+    flex-direction: column;
+  }
+
+  #table {
+    width: 399px;
+  }
+
+  #line-1 {
+    position: relative;
+    top: calc(288px / 2) !important;
+  }
+
+  #line-2 {
+    position: relative;
+    top: calc(545px / 2) !important;
+  }
+
+  #line-3 {
+    position: relative;
+    top: calc(805px / 2) !important;
+  }
+
+  #line-4 {
+    position: relative;
+    left: calc(-270px / 2) !important;
+    top: calc(500px / 2) !important;
+  }
+
+  #line-5 {
+    position: relative;
+    top: calc(480px / 2) !important;
+    left: calc(0px / 2) !important;
+  }
+
+  #line-6 {
+    position: relative;
+    top: calc(458px / 2) !important;
+    right: calc(-268px / 2) !important;
+  }
+
+  #line-7 {
+    position: relative;
+    left: calc(10px / 2) !important;
+    top: calc(450px / 2) !important;
+  }
+
+  #line-8 {
+    position: relative;
+    left: calc(-5px / 2) !important;
+    top: calc(425px / 2) !important;
+  }
 }
