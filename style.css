@@ -112,6 +112,10 @@ tr td:last-child {
   animation: zoomIn 300ms ease-in-out;
 }
 
+.red {
+  color: #833E5B;
+}
+
 @keyframes zoomIn {
   from {
     opacity: 0;

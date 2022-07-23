@@ -10,6 +10,14 @@
       rel="stylesheet"
     />
     <!-- Google Fonts -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Favicon -->
     <title>Tic Tac Toe</title>
   </head>
   <body onload="init()">
@@ -34,7 +42,7 @@
       </div>
       <div class="end-screen d-none" id="end-screen">
         <h2 id="the-winner"></h2>
-        <h3>Press on Restart Button for Restart</h3>
+        <h3>Press on <span class="red">Restart</span> Button for play again</h3>
         <button class="button-5" role="button" onclick="restart()">Restart</button>
       </div>
 
