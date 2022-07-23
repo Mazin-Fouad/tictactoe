@@ -255,7 +255,7 @@ tr td:last-child {
   }
 } */
 
-@media (min-width: 380px){
+@media (min-width: 320px){
   #start-screen {
     width: 375px;
   }

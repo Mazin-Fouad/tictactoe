@@ -17,7 +17,7 @@ function start() {
 }
 
 function fillShape(id) {
-  if (!fields[id] && !gameOver) {
+  if (!fields[id] && !gameOver) { // if fields are empty and game is not over, the game will run
     if (currentShape == 'Cross') {
       currentShape = 'Circle';
       document.getElementById('player-1').classList.remove('player-inactive');
@@ -34,6 +34,10 @@ function fillShape(id) {
   }
 }
 
+/**
+ * using loop to show onclick Cricle and/or Cross icon
+ * the function called from fillShape();
+ */
 function draw() {
   for (let i = 0; i < fields.length; i++) {
     if (fields[i] == 'Circle') {
@@ -48,7 +52,7 @@ function draw() {
 
 function checkForWinn() {
   let winner;
-
+  
   if (fields[0] == fields[1] && fields[1] == fields[2] && fields[0]) {
     winner = fields[0];
     document.getElementById('line-1').style.transform = 'scaleX(1.1)';
@@ -152,6 +156,9 @@ function showLines() {
   document.getElementById('line-8').classList.remove('d-none');
 }
 
+/**
+ * reset all animation lines
+ */
 function resetScaleAndRotate() {
   document.getElementById('line-1').style.transform = 'scaleX(0)';
   document.getElementById('line-2').style.transform = 'scaleX(0)';
